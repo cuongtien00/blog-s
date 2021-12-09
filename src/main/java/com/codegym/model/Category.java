@@ -15,7 +15,7 @@ public class Category implements Serializable {
     private Long id;
     private String name;
 
-    @OneToMany(targetEntity = Blog.class)
+    @OneToMany(targetEntity = Blog.class,fetch = FetchType.EAGER)
     @JsonBackReference
     private List<Blog> blogs;
 

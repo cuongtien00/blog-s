@@ -8,10 +8,7 @@ import com.codegym.service.category.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -53,6 +50,11 @@ public class CategoryRestController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(blogs,HttpStatus.OK);
+    }
+    @DeleteMapping
+    public ResponseEntity<Category> deleteCateGory(@RequestBody Category category){
+        categoryService.save(category);
+        return new ResponseEntity<>(category,HttpStatus.OK);
     }
 
 }

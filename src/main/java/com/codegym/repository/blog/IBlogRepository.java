@@ -12,4 +12,5 @@ import java.util.List;
 public interface IBlogRepository extends PagingAndSortingRepository<Blog,Long> {
 //     Page<Blog> findAllByCategoryContaining(Pageable pageable);
 Iterable<Blog> findAllByCategory(Category category);
+Iterable<Blog>findAllByTittleContaining(String content);
 }

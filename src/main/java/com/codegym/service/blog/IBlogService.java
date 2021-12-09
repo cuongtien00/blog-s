@@ -16,4 +16,6 @@ public interface IBlogService {
     Optional<Blog> findById(Long id) throws NotFoundException;
     void save(Blog blog);
     void remove(Long id);
+    Iterable<Blog>findAllByTittleContaining(String content);
+
 }

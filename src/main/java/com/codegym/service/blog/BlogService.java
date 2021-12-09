@@ -54,4 +54,9 @@ blogRepository.save(blog);
     public void remove(Long id) {
 blogRepository.deleteById(id);
     }
+
+    @Override
+    public Iterable<Blog> findAllByTittleContaining(String content) {
+        return blogRepository.findAllByTittleContaining(content);
+    }
 }
